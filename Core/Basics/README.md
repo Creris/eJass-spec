@@ -133,7 +133,7 @@ List of name-referable eJass Constructs:
 * [Variable](../Variable/)
 * [Allocator](../Allocator/)
 * [Type](../Type/)
-* [Free standing method](../Free standing method/)
+* [Free standing method](../Free Standing Method/)
 * [Enum](../Enum/)
 
 ## 4. Scope
@@ -618,7 +618,7 @@ The following table defines which eJass Construct can contain other eJass Constr
 [interface](../Interface/)            		 		| Global Scope, library, scope
 [concept](../Concept/)               				| Global Scope, library, scope
 [import](../../Preprocessor/Import/)        		| Global Scope, library, scope
-[free standing method](../Free standing method/)  	| Global Scope, library, scope
+[free standing method](../Free Standing Method/)  	| Global Scope, library, scope
 [allocator](../Allocator/)             				| Global Scope, library, scope
 [hook](../Hook/)                  					| Global Scope, library, scope
 [textmacro](../../Preprocessor/Textmacro/)          | Global Scope, library, scope
