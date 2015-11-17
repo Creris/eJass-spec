@@ -1,9 +1,9 @@
 # Basics
 This document covers the fundamental rules of eJass.
 
-# 1. [eJass Construct](#1-eJass-Construct)
-[eJass Construct](#1-eJass-Construct) is anything that can be specified in eJass syntax.
-All [eJass Construct](#1-eJass-Construct)s are case sensitive.
+# 1. eJass Construct
+eJass Construct is anything that can be specified in eJass syntax.
+All eJass Constructs are case sensitive.
 
 Example:
 
@@ -19,7 +19,7 @@ endstruct
 
 # 2. Keyword
 Keyword is every sequence of one or more characters that has some syntactical meaning.
-Some keywords are [context sensitive](#22-Context-Sensitive).
+Some keywords are [context sensitive](#22-context-sensitive).
 
 ## 2.1 List of keywords
 
@@ -45,7 +45,7 @@ construct       |endexternalblock|externalblock   |module          |scope       
 
 ## 2.2 Context Sensitive
 Every keyword that is context sensitive only have their intended meaning when present in given context.
-If these keywords appear outside of their context, they are not treated as keywords but as regular [eJass Constructs](#1-eJass-Construct).
+If these keywords appear outside of their context, they are not treated as keywords but as regular [eJass Constructs](#1-ejass-construct).
 List of context sensitive keyword and their respective context:
 Keyword | Keyword context
 | :---: | :---:
@@ -54,9 +54,9 @@ before  | inside hook expression, inside extendor declaration
 final   | inside method declaration
 inline  | inside function or method declaration
 
-# 3. Name-referable [eJass Construct](#1-eJass-Construct)
-Name-referable [eJass Construct](#1-eJass-Construct) is every eJass construct that can be directly referenced by name.
-List of name-referable [eJass Construct](#1-eJass-Construct)s:
+# 3. Name-referable [eJass Construct](#1-ejass-construct)
+Name-referable [eJass Construct](#1-ejass-construct) is every eJass construct that can be directly referenced by name.
+List of name-referable [eJass Construct](#1-ejass-construct)s:
 * [Library]()
 * [Scope]()
 * [Function and method]()
@@ -69,7 +69,7 @@ List of name-referable [eJass Construct](#1-eJass-Construct)s:
 * [Type]()
 
 # 4. Scope
-Scope is every [eJass Construct](#1-eJass-Construct) that introduces new logical or other scope.
+Scope is every [eJass Construct](#1-ejass-construct) that introduces new logical or other scope.
 
 Example:
 ```Jass
@@ -99,30 +99,30 @@ Special Scopes:
 	Is the top-most Scope.
   
 2. __Defining Scope__
-	Is a Scope that defines given [eJass Construct](#1-eJass-Construct).
+	Is a Scope that defines given [eJass Construct](#1-ejass-construct).
 
 3. __External Scope__
 	Is every Scope that is not current Scope.
 
 ## 4.1 Global Scope
 Global Scope is the outer-most Scope of the script. Global Scope is not inside any other Scope and all Scopes are inside Global Scope.
-All name-referable [eJass Construct](#1-eJass-Construct)s are reachable from Global Scope.
+All name-referable [eJass Construct](#1-ejass-construct)s are reachable from Global Scope.
 
 ### 4.1.1 Modifier Global
-Special modifier Global can be used as part of the name of name-referable [eJass Construct](#1-eJass-Construct) to specify that the [scope resolution](#42-Scope-resolution) happens from Global Scope.
+Special modifier Global can be used as part of the name of name-referable [eJass Construct](#1-ejass-construct) to specify that the [scope resolution](#42-scope-resolution) happens from Global Scope.
 
 ## 4.2 Scope resolution
-Scope resolution changes relative names of name-referable [eJass Construct](#1-eJass-Construct)s into their absolute names including their scopes.
+Scope resolution changes relative names of name-referable [eJass Construct](#1-ejass-construct)s into their absolute names including their scopes.
 Scope resolution is performed using dot syntax.
 
 ### 4.2.1 Implicit and explicit Scopes
 There are two types of Scope in eJass:
 1. Implicit Scope
-	Is such Scope that is directly visible from current Scope and name-referable [eJass Construct](#1-eJass-Construct)s inside such Scope can be referenced using their relative name.
+	Is such Scope that is directly visible from current Scope and name-referable [eJass Construct](#1-ejass-construct)s inside such Scope can be referenced using their relative name.
 		* Global Scope is always Implicit.
 
 2. Explicit Scope
-	Is such Scope that is not directly visible from current Scope and name-referable [eJass Construct](#1-eJass-Construct)s inside such Scope can not be referenced using relative name.
+	Is such Scope that is not directly visible from current Scope and name-referable [eJass Construct](#1-ejass-construct)s inside such Scope can not be referenced using relative name.
 	They need to use such name that the first Scope in that name is Implicit Scope for current Scope.
 
 ### 4.2.2 Scope resolution rules
@@ -182,10 +182,11 @@ endlibrary
 #### 4.2.3.1 Syntax
 ```Jass
 using scope_name
-
-1. The whole [expression](#6-Expression) has to be placed on separate line relative to other [eJass Construct](#1-eJass-Construct)s.
-2. using and scope_name is bound tightly.
 ```
+
+1. The whole [expression](#6-Expression) has to be placed on separate line relative to other [eJass Construct](#1-ejass-construct)s.
+2. using and scope_name is bound tightly.
+
 #### 4.2.3.1.1 White spaces
 ```Jass
 using scope_name
@@ -239,7 +240,7 @@ endscope
 ```
 
 ## 4.4 Bracket Scoping
-Brackets can also create pseudo scopes for certain [Syntactic Units](#11-Syntactic-Unit). The lowest bracket-scope is the lowest, and the more opening brackets are encountered, the higher bracket-scope is.
+Brackets can also create pseudo scopes for certain [Syntactic Units](#11-syntactic-unit). The lowest bracket-scope is the lowest, and the more opening brackets are encountered, the higher bracket-scope is.
 
 Example:
 ```Jass
@@ -256,40 +257,40 @@ G is in bracket-scope 1
 Q is in bracket-scope 0
 
 # 5. Qualifiers
-Qualifiers are [eJass Construct](#1-eJass-Construct)s that can be placed before certain other [eJass Construct](#1-eJass-Construct)s and they qualify that [eJass Construct](#1-eJass-Construct).
+Qualifiers are [eJass Construct](#1-ejass-construct)s that can be placed before certain other [eJass Construct](#1-ejass-construct)s and they qualify that [eJass Construct](#1-ejass-construct).
 
 ## 5.1 Visibility-Qualifier
-Visibility-Qualifier distinguishes whether given [eJass Construct](#1-eJass-Construct) is visible to the whole script, or if only the local scope can access and use it. Abbreviation: Vis-Qualifier.
+Visibility-Qualifier distinguishes whether given [eJass Construct](#1-ejass-construct) is visible to the whole script, or if only the local scope can access and use it. Abbreviation: Vis-Qualifier.
 
 Valid Visibility-Qualifiers:
 public, private, --none--(defaults public)
 
 ## 5.2 Staticity-Qualifier
-Staticity-Qualifier determinates whether given [eJass Construct](#1-eJass-Construct) is usable only for one instance of struct/interface, or if it is usable by all instances. Abbreviation: Static-Qualifier.
+Staticity-Qualifier determinates whether given [eJass Construct](#1-ejass-construct) is usable only for one instance of struct/interface, or if it is usable by all instances. Abbreviation: Static-Qualifier.
 
 Valid Static-Qualifiers:
 static, --none--
 
 ## 5.3 Readonly-Qualifier
-Readonly-Qualifier determinates whether given [eJass Construct](#1-eJass-Construct) is only readable from scopes other than defining scope, or if it is possible to also write to such [eJass Construct](#1-eJass-Construct) from external scopes.
+Readonly-Qualifier determinates whether given [eJass Construct](#1-ejass-construct) is only readable from scopes other than defining scope, or if it is possible to also write to such [eJass Construct](#1-ejass-construct) from external scopes.
 
 Valid Readonly-Qualifiers:
 readonly, --none--
 
 ## 5.4 Const-Qualifier
-Const-Qualifier determinates whether given [eJass Construct](#1-eJass-Construct) is constant(unmodifiable), or if it can be modified after definition or declaration. Const-Qualifier before function definition have special meaning.
+Const-Qualifier determinates whether given [eJass Construct](#1-ejass-construct) is constant(unmodifiable), or if it can be modified after definition or declaration. Const-Qualifier before function definition have special meaning.
 
 Valid Const-Qualifiers:
 constant, --none--
 
 ## 5.5 Comp-Qualifier
-Comp-Qualifier determinates whether given [eJass Construct](#1-eJass-Construct) can be marked as compiletime, meaning that it can be executed by interpreter during compilation of the map script.
+Comp-Qualifier determinates whether given [eJass Construct](#1-ejass-construct) can be marked as compiletime, meaning that it can be executed by interpreter during compilation of the map script.
 
 Valid Comp-Qualifiers:
 compiletime, --none--
 
 # 6. Expression
-Expression is every [eJass Construct](#1-eJass-Construct) that expresses some logical executable piece of code.
+Expression is every [eJass Construct](#1-ejass-construct) that expresses some logical executable piece of code.
 Assignment, function call, control flow block and return statements are expressions.
 Expressions are always evaluated in left to right order.
 
@@ -309,7 +310,7 @@ will evaluate in following order:
 Every expression can be assigned value representing the depth. This value is called level. Top-level expressions are such expressions that are not encapsulated in another expressions. Every expression that is encapsulated in N expressions is of Nth-level expression. Expressions can be any level deep.
 
 # 7. Comments
-Comments are [eJass Construct](#1-eJass-Construct) that are ignored when compiling the code.
+Comments are [eJass Construct](#1-ejass-construct) that are ignored when compiling the code.
 
 ## 7.1 Single line comments
 Single line comments are such comments that only comment certain sequence of characters in given line and the comment ends with next new line symbol.
@@ -339,7 +340,7 @@ comment */ still comment */ not comment
 Multiple line comments can be nested indefinitely. Multiple line comments can never begin or end inside string literals.
 
 # 8. Constant
-Constant [eJass Construct](#1-eJass-Construct)s are such objects that can not be modified and can not modify state of the runtime environment.
+Constant [eJass Construct](#1-ejass-construct)s are such objects that can not be modified and can not modify state of the runtime environment.
 
 ## 8.1 Constant Function
 Constant [functions]() are normal functions with following restrictions:
@@ -361,13 +362,13 @@ Constant [variable]() is normal variable with following restrictions:
 2. Rules for Constant argument also apply to constant variables.
 
 ## 8.4 Constant value
-Constant value is any [literal](), [compiletime expression]() or [constant variable](#83-Constant-variable)
+Constant value is any [literal](), [compiletime expression]() or [constant variable](#83-constant-variable)
 
 # 9. Optimizations
 eJass allows following optimizations to be performed on the script:
 
 ## 9.1 Name shortening
-Every name-referable [eJass Construct](#1-eJass-Construct) can have its name shortened to shortest possible length such that it still has unique name.
+Every name-referable [eJass Construct](#1-ejass-construct) can have its name shortened to shortest possible length such that it still has unique name.
 Special sequences of characters that could be used for name shortening can be reserved by the implementation.
 
 ## 9.2 Function [inlining]()
@@ -381,8 +382,8 @@ Every constant and compiletime variable can be inlined into values they are defi
 If any [expression](#6-Expression) returns value deducible in compilation, the implementation can replace given expression by the value it returns.
 
 ## 9.5 Dead code removal
-Every [eJass Construct](#1-eJass-Construct) and [expression](#6-Expression) that is not referenced anywhere in the script is removed from the script.
-Every [comment](#7-Comments) is also removed from the script. Every piece of code that is never executed(if false then, or after return value) is removed.
+Every [eJass Construct](#1-ejass-construct) and [expression](#6-Expression) that is not referenced anywhere in the script is removed from the script.
+Every [comment](#7-comments) is also removed from the script. Every piece of code that is never executed(if false then, or after return value) is removed.
 
 ## 9.6 As if rule
 The implementation can transform the code in any way if it can guarantee that the runtime environment state after the code is executed will not be different than if the code is not executed.
@@ -445,7 +446,7 @@ Priority | Name | Example
 Syntactic unit is every non-white space character inside map script, be it name, keyword or parenthesis.
 
 # 12. White spaces - General
-Some [Syntactic Units](#11-Syntactic-Unit) have to be separated by at least one white space. For example, there must always be space between function and its name, and its name and takes but there needs not to be space between variable and =. If two Syntactical Units can not be separated by new line, they are bound tightly. If two Syntactical Units can be separated by new line, they are bound loosely.
+Some [Syntactic Units](#11-syntactic-unit) have to be separated by at least one white space. For example, there must always be space between function and its name, and its name and takes but there needs not to be space between variable and =. If two Syntactical Units can not be separated by new line, they are bound tightly. If two Syntactical Units can be separated by new line, they are bound loosely.
 
 # 13. Initialization rules
 Various functions can be marked as initializers which makes them run when the script is initially executed. Initialization goes in this specified order:
@@ -471,7 +472,7 @@ Various functions can be marked as initializers which makes them run when the sc
 4. [Free-standing Initializer]()
 
 # 14. Priorities
-Priority defines when should given [eJass Construct](#1-eJass-Construct) be executed/evaluated or in other means ran.
+Priority defines when should given [eJass Construct](#1-ejass-construct) be executed/evaluated or in other means ran.
 
 ## 14.1 Syntax
 ```Jass
@@ -484,7 +485,7 @@ priority = 54
 priority = -200
 ```
 
-If [eJass Construct](#1-eJass-Construct) has optional priority, and none is provided, implicit priority of 0 is assumed. If 2 same [eJass Constructs](#1-eJass-Construct) are defined with the same priority, the order of evaluation is implementation defined.
+If [eJass Construct](#1-ejass-construct) has optional priority, and none is provided, implicit priority of 0 is assumed. If 2 same [eJass Constructs](#1-ejass-construct) are defined with the same priority, the order of evaluation is implementation defined.
 
 ### 14.1.1 White spaces
 ```Jass
