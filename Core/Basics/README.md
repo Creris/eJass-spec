@@ -1,5 +1,5 @@
 # Basics
-This document covers the fundamental rules of eJass.
+This document covers the fundamental rules of eJass language.
 
 # Table of contents
 
@@ -87,26 +87,26 @@ Some keywords are [context sensitive](#22-context-sensitive).
 
 ### 2.1 List of keywords
 
-#else           |continue        |endfunction     |final*          |native          |set         
+#else           |continue        |endfunction     |final*          |native          |set             |
      :----:     |     :----:     |     :----:     |     :----:     |     :----:     |     :----:     
-#elseif         |debug           |endglobals      |for             |needs           |sizeof      
-#endif          |defaults        |endif           |function        |not             |static      
-#if             |defined         |endinterface    |globals         |null            |static_assert
-after*          |deprecated      |endlibrary      |hook            |operator        |struct      
-alias           |destruct        |endloop         |hookable        |optional        |stub        
-allocator       |destructor      |endmethod       |if              |or              |takes       
-and             |else            |endmodule       |implement       |override        |template    
-array           |elseif          |endscope        |import          |priority*       |temporary   
-auto            |encrypted       |endstruct       |initializer     |private         |textmacro   
-before*         |endallocator    |endtextmacro    |inline*         |protected       |then        
-break           |endblock        |endwhile        |interface       |public          |this        
-call            |endconstructor  |exitwhen        |library         |readonly        |thistype    
-cast            |enddestructor   |extendor        |library_once    |requires        |true        
-catch           |endextendor     |extends         |local           |return          |type        
-compiletime     |endexternal     |external        |loop            |returns         |uses        
-constant        |endexternalblock|externalblock   |method          |runtextmacro    |using       
-construct       |endfor          |false           |module          |scope           |while       
-constructor     |				 |				  |				   |				|		
+#elseif         |debug           |endglobals      |for             |needs           |sizeof          |
+#endif          |defaults        |endif           |function        |not             |static          |
+#if             |defined         |endinterface    |globals         |null            |static_assert   |
+after*          |deprecated      |endlibrary      |hook            |operator        |struct          |
+alias           |destruct        |endloop         |hookable        |optional        |stub            |
+allocator       |destructor      |endmethod       |if              |or              |takes           |
+and             |else            |endmodule       |implement       |override        |template        |
+array           |elseif          |endscope        |import          |priority*       |temporary       |
+auto            |encrypted       |endstruct       |initializer     |private         |textmacro       |
+before*         |endallocator    |endtextmacro    |inline*         |protected       |then            |
+break           |endblock        |endwhile        |interface       |public          |this            |
+call            |endconstructor  |enum            |library         |readonly        |thistype        |
+cast            |enddestructor   |exitwhen        |library_once    |requires        |true            |
+catch           |endenum         |extendor        |local           |return          |type            |
+compiletime     |endextendor     |extends         |loop            |returns         |uses            |
+constant        |endexternal     |external        |method          |runtextmacro    |using           |
+construct       |endexternalblock|externalblock   |module          |scope           |while           |
+constructor     |endfor          |false           |
 
 ### 2.2 Context Sensitive
 Every keyword that is context sensitive only have their intended meaning when present in given context.
@@ -465,22 +465,24 @@ The implementation can transform the code in any way if it can guarantee that th
 
 ### 10.1 Arithmetic operators
 Arithmetic operators perform arithmetic operations on operand or operands. List of arithmetic operators:
-1. +
-2. -
-3. /
-4. *
-5. +=
-6. -=
-7. /=
-8. *=
-9. ++
-10. --
-11. % 
-12. %=
-13. <<
-14. >>
-15. <<=
-16. >>=
+
+Id | Op  | Description
+1. | +   | Unary: Noop; Binary: Performs arithmetic addition of left and right operands
+2. | -   | Unary: Performs arithmetic negation; Binary: Performs arithmetic subtraction of left and right operands
+3. | /   | Performs arithmetic division of left and right operands(left divided by right)
+4. | *   | Performs arithmetic multiplication of left and right operands
+5. | +=  | Performs left = left + right
+6. | -=  | Performs left = left - right
+7. | /=  | Performs left = left / right
+8. | *=  | Performs left = left * right
+9. | ++  | Performs left = left + 1
+10.| --  | Performs left = left - 1
+11.| %   | Performs left - (left/right)*right
+12.| %=  | Performs left = left % right
+13.| <<  | Performs left * Pow(2, right)
+14.| >>  | Performs left / Pow(2, right)
+15.| <<= | Performs left = left << right
+16.| >>= | Performs left = left >> right
 
 None of operators accept non-implicitly convertible [types](../Type/) as their operands. Operators 9, 10, 11, 12, 13, 14, 15 and 16 only accept integer variables.
 If operators 9 or 10 are used on variable, given [expression](#6-expression) must be 1st level expression.
@@ -488,14 +490,17 @@ All of these operators can be [overloaded](../Overload Resolution/).
 
 ### 10.2 Logical operators
 Logical operators perform logical operations on operand or operands. List of logical operators:
-1. ==
-2. <=
-3. >=
-4. !=
-5. !
-6. not
-7. and
-8. or
+
+Id | Op   | Description
+---|------|:----
+1. | ==   | Returns true if both sides evaluate to the same boolean
+2. | <=   | Returns true if right operand is bigger than or equal to left operand after conversions
+3. | >=   | Returns true if right operand is lower than or equal to left operand after conversions
+4. | !=   | Returns true if right operand is not equal to left operand after conversions
+5. | !    | Negates given boolean operand
+6. | not  | Negates given boolean operand
+7. | and  | Returns true only if both right and left operands evaluate to true after conversions
+8. | or   | Returns true if either right or left operand evaluate to true after conversions
 
 Operators ==, <=, != and >= can accept any implicitly convertible types, and can also accept any mix of integers and reals. Operators 5, 6, 7 and 8 only accept boolean values.
 All of these operators can be [overloaded](../Overload Resolution/).
@@ -572,9 +577,13 @@ priority = [integer literal]
 2. = is bound tightly into [integer literal].
 
 ## 15. Naming Rules
+Every [eJass Construct](#1-ejass-construct) must have a name which does not violate any of the following rules:
+* Any character inside the name must be one of: a-z, A-Z, 0-9 or _
+* The name must not start with _
+* The name must not start with number
 
 ### 15.1 Directly inside Scope A
-[eJass Construct](#1-ejass-construct) is directly inside [Scope](#4-scope) A if given construct is exactly inside A, not inside any other Scope that is inside A.
+eJass Construct is directly inside [Scope](#4-scope) A if given construct is exactly inside A, not inside any other Scope that is inside A.
 
 Example:
 ```Jass
