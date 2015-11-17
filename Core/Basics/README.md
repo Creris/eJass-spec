@@ -22,11 +22,12 @@ Keyword is every sequence of one or more characters that has some syntactical me
 Some keywords are [context sensitive](#22-Context-Sensitive).
 
 ## 2.1 List of keywords
-#else           |constructor     |endfor          |false           |native          |set             
+
+\#else           |constructor     |endfor          |false           |native          |set             
      :----:     |     :----:     |     :----:     |     :----:     |     :----:     |     :----:     
-#elseif         |continue        |endfunction     |final*          |needs           |sizeof          
-#endif          |debug           |endglobals      |for             |not             |static          
-#if             |defaults        |endif           |function        |null            |static_assert   
+\#elseif         |continue        |endfunction     |final*          |needs           |sizeof          
+\#endif          |debug           |endglobals      |for             |not             |static          
+\#if             |defaults        |endif           |function        |null            |static_assert   
 after*          |defined         |endinterface    |globals         |operator        |struct          
 alias           |deprecated      |endlibrary      |hook            |optional        |stub            
 allocator       |destruct        |endloop         |hookable        |or              |takes           
