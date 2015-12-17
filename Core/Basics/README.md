@@ -87,26 +87,26 @@ Some keywords are [context sensitive](#22-context-sensitive).
 
 ### 2.1 List of keywords
 
-#else           |continue        |endfunction     |final*          |native          |set          
+|#else           |continue        |endfunction     |final*          |native          |set          
      :----:     |     :----:     |     :----:     |     :----:     |     :----:     |     :----:  
-#elseif         |debug           |endglobals      |for             |needs           |sizeof       
-#endif          |defaults        |endif           |function        |not             |static       
-#if             |defined         |endinterface    |globals         |null            |static_assert
-after*          |deprecated      |endlibrary      |hook            |operator        |struct       
-alias           |destruct        |endloop         |hookable        |optional        |stub         
-allocator       |destructor      |endmethod       |if              |or              |takes        
-and             |else            |endmodule       |implement       |override        |template     
-array           |elseif          |endscope        |import          |priority*       |temporary    
-auto            |encrypted       |endstruct       |initializer     |private         |textmacro    
-before*         |endallocator    |endtextmacro    |inline*         |protected       |then         
-break           |endblock        |endwhile        |interface       |public          |this         
-call            |endconstructor  |enum            |library         |readonly        |thistype     
-cast            |enddestructor   |exitwhen        |library_once    |requires        |true         
-catch           |endenum         |extendor        |local           |return          |type         
-compiletime     |endextendor     |extends         |loop            |returns         |uses         
-constant        |endexternal     |external        |method          |runtextmacro    |using        
-construct       |endexternalblock|externalblock   |module          |scope           |while        
-constructor     |endfor          |false           |				   |				|
+|#elseif         |debug           |endglobals      |for             |needs           |sizeof       
+|#endif          |defaults        |endif           |function        |not             |static       
+|#if             |defined         |endinterface    |globals         |null            |static_assert
+|after*          |deprecated      |endlibrary      |hook            |operator        |struct       
+|alias           |destruct        |endloop         |hookable        |optional        |stub         
+|allocator       |destructor      |endmethod       |if              |or              |takes        
+|and             |else            |endmodule       |implement       |override        |template     
+|array           |elseif          |endscope        |import          |priority*       |temporary    
+|auto            |encrypted       |endstruct       |initializer     |private         |textmacro    
+|before*         |endallocator    |endtextmacro    |inline*         |protected       |then         
+|break           |endblock        |endwhile        |interface       |public          |this         
+|call            |endconstructor  |enum            |library         |readonly        |thistype     
+|cast            |enddestructor   |exitwhen        |library_once    |requires        |true         
+|catch           |endenum         |extendor        |local           |return          |type         
+|compiletime     |endextendor     |extends         |loop            |returns         |uses         
+|constant        |endexternal     |external        |method          |runtextmacro    |using        
+|construct       |endexternalblock|externalblock   |module          |scope           |while        
+|constructor     |endfor          |false           |				   |				|
 
 ### 2.2 Context Sensitive
 Every keyword that is context sensitive only have their intended meaning when present in given context.
