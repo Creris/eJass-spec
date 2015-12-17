@@ -112,6 +112,7 @@ Some keywords are [context sensitive](#22-context-sensitive).
 Every keyword that is context sensitive only have their intended meaning when present in given context.
 If these keywords appear outside of their context, they are not treated as keywords but as regular [eJass Constructs](#1-ejass-construct).
 List of context sensitive keyword and their respective context:
+
 |Keyword  | Keyword context |
 |  :---:  | :---: |
 |after    | inside hook expression, inside extendor declaration|
