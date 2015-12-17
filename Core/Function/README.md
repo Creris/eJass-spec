@@ -27,7 +27,7 @@ Function's signature consists of function's name and its number and type of argu
 ### 1.2 Syntax
 #### 1.2.1 Definition
 ```Jass
-opt:(deprecated) opt:(inline) opt:(Visibility-Qualifier)
+opt:(hookable) opt:(deprecated) opt:(inline) opt:(Visibility-Qualifier)
 opt:(Comp-Qualifier) opt:(Const-Qualifier)
 function function_name takes opt:(arguments) returns
 opt:(Comp-Qualifier) opt:(Const-Qualifier) return_type_name

@@ -88,7 +88,7 @@ Some keywords are [context sensitive](#22-context-sensitive).
 ### 2.1 List of keywords
 
 |#else           |continue        |endfunction     |final*          |native          |set          
-     :----:     |     :----:     |     :----:     |     :----:     |     :----:     |     :----:  
+     :----:      |     :----:     |     :----:     |     :----:     |     :----:     |     :----:  
 |#elseif         |debug           |endglobals      |for             |needs           |sizeof       
 |#endif          |defaults        |endif           |function        |not             |static       
 |#if             |defined         |endinterface    |globals         |null            |static_assert
@@ -106,19 +106,19 @@ Some keywords are [context sensitive](#22-context-sensitive).
 |compiletime     |endextendor     |extends         |loop            |returns         |uses         
 |constant        |endexternal     |external        |method          |runtextmacro    |using        
 |construct       |endexternalblock|externalblock   |module          |scope           |while        
-|constructor     |endfor          |false           |				   |				|
+|constructor     |endfor          |false           |				|				 |
 
 ### 2.2 Context Sensitive
 Every keyword that is context sensitive only have their intended meaning when present in given context.
 If these keywords appear outside of their context, they are not treated as keywords but as regular [eJass Constructs](#1-ejass-construct).
 List of context sensitive keyword and their respective context:
-Keyword  | Keyword context
+|Keyword  | Keyword context
   :---:  | :---:
-after    | inside hook expression, inside extendor declaration
-before   | inside hook expression, inside extendor declaration
-final    | inside method declaration
-inline   | inside function or method declaration
-priority | inside hook expression, inside extendor definition
+|after    | inside hook expression, inside extendor declaration
+|before   | inside hook expression, inside extendor declaration
+|final    | inside method declaration
+|inline   | inside function or method declaration
+|priority | inside hook expression, inside extendor definition
 
 ## 3. Name-referable eJass Construct
 Name-referable [eJass Construct](#1-ejass-construct) is every eJass construct that can be directly referenced by name.
