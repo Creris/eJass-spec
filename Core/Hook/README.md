@@ -1,6 +1,12 @@
 # Hook
 This document describes the keyword hook and its behaviour in eJass language.
 
+# Table of contents
+
+1. [Hook](#1-hook)
+	1. [Syntax](#11-syntax)
+		1. [White spaces](#111-white-spaces)
+
 ## 1. Hook
 Hook allows code to be executed when other code is about to be executed, or right after it finished execution.
 
