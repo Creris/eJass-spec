@@ -64,6 +64,16 @@ Concepts can be templated, and can put following requirements on any type visibl
 2. existence of function with given name, arguments and return type
 
 Concept can only become constraint after it has been fully defined. Concept itself can have constraints. If function or method with given name, signature and return type does not exist, the concept returns false.
+If any constraint requires only that there is a type with no regards to actual type, the constraint can use keyword type to say so.
+
+Example:
+```Jass
+concept C
+	method m takes type A, type B, type C returns nothing
+endconcept
+```
+
+This concept will match any type that has method m that takes exactly three arguments and returns nothing.
 
 #### 2.1.1 White spaces
 ```Jass
